@@ -6,6 +6,7 @@ let extractedDigits = [];
 let count = 0;
 let reverseNum = 0; 
 let dup = n;
+let sum = 0;
 
 // Loop until the number is greater than zero
 while (n > 0) {
@@ -14,6 +15,7 @@ while (n > 0) {
   count++;
   extractedDigits.push(lastDigit);
   reverseNum = reverseNum * 10 + lastDigit; 
+  sum = sum + (lastDigit * lastDigit * lastDigit)
 }
 
 if(dup === reverseNum){
@@ -23,9 +25,16 @@ if(dup === reverseNum){
 }
 extractedDigits.reverse();
 
+// Armstrong
+if(dup === sum){
+  console.log(`Armstrong Number`)
+} else{
+  console.log(`Not an Armstrong Number`)
+}
+
 console.log(
   'Extracted Digits : ',extractedDigits,
   'Count of Extracted Digits is',count,
-  'Reverse Number is',reverseNum
+  'Reverse Number is',reverseNum,
 );
 
